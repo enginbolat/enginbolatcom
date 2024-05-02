@@ -3,9 +3,9 @@ import { ProjectModel, SocialMediaModel, TechStack } from "../model";
 export const projects: ProjectModel[] = [
   {
     "id": 0,
-    "name": "Antalya Kart",
-    "link": "https://github.com/EnginBolat/antalya_kart_redesign",
-    "image": "/images/ant-kart.jpg",
+    "name": "Metaggio",
+    "link": "https://metaggio.com/",
+    "image": "/images/metaggio.jpg",
   },
   {
     "id": 1,
@@ -15,53 +15,53 @@ export const projects: ProjectModel[] = [
   },
   {
     "id": 2,
+    "name": "Antalya Kart",
+    "link": "https://github.com/EnginBolat/antalya_kart_redesign",
+    "image": "/images/ant-kart.jpg",
+  },
+  {
+    "id": 3,
     "name": "Meal App",
     "link": "https://github.com/EnginBolat/meal-app-bloc",
     "image": "/images/meal-app.jpg",
   },
-  {
-    "id": 3,
-    "name": "Metaggio",
-    "link": "https://metaggio.com/",
-    "image": "/images/metaggio.jpg",
-  }
 ]
 
 
 export const socialMedia: SocialMediaModel[] = [
   {
     id: 0,
-    path: "",
+    path: "./ic/ic_instagram.png",
     link: "/instagram",
   },
   {
     id: 1,
-    path: "",
+    path: "./ic/ic_x.png",
     link: "/twitter",
   },
   {
     id: 2,
-    path: "",
+    path: "./ic/ic_youtube.png",
     link: "/youtube",
   },
   {
     id: 3,
-    path: "",
+    path: "./ic/ic_github.png",
     link: "/github",
   },
   {
     id: 4,
-    path: "",
+    path: "./ic/ic_linkedin.png",
     link: "/linkedin",
   },
   {
     id: 5,
-    path: "",
+    path: "./ic/ic_spotify.png",
     link: "/spotify"
   },
   {
     id: 6,
-    path: "",
+    path: "./ic/ic_medium.png",
     link: "/medium"
   }
 ];
