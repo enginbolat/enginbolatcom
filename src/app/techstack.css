@@ -1,0 +1,5 @@
+.techStackContainer {
+    scrollbar-width: none;
+    position: relative;
+    overflow-x: hidden;
+}
