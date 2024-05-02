@@ -7,7 +7,7 @@ const PortfolioCard: React.FC<{
     title,
     link,
 }) => {
-        return <a href={link} className="cursor-pointer">
+        return <a href={link} className="hover:cursor-pointer">
             <div className="relative bg-transparent group rounded-xl border border-gray-200 cursor-pointer">
                 <img
                     src={path}
