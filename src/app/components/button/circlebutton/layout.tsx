@@ -3,7 +3,7 @@ const CirlceButton: React.FC<{
     path: string,
 }> = ({ link, path }) => {
     return <a href={link} className="block px-2" target='_blank' rel='noopener noreferrer' >
-        <div className="black rounded-full bg-orange-400 hover:bg-orange-600 xl:w-16 xl:h-16" />
+        <img className="block rounded-xl hover:bg-gray-100 xl:w-16 xl:h-16 p-2" src={path}/>
     </a>
 }
 
