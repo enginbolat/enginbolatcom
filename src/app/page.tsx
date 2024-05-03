@@ -8,23 +8,22 @@ import { ProjectModel, SocialMediaModel, TechStack as TechStackModel, } from "./
 export default function Home() {
   return (
     <div className="flex flex-col bg-white">
-      <div className="flex flex-col items-center justify-center px-8 pb-12">
+      <div className="flex flex-col items-center justify-center max-md:px-12 max-lg:px-40 lg:px-40 pt-20 pb-12">
         <img className="block xl:w-64 xl:h-64" src="/images/profile.png" />
-        <span className="text-black text-4xl pt-5 text-center">Hello! I'm Engin</span>
+        <span className="text-black text-4xl pt-5 text-center font-bold">Hello! I'm Engin</span>
         <div className="flex-row pt-3 items-center justify-center">
           <span className="text-black text-2xl font-medium">Software </span>
           <span className="text-gray-400 text-2xl font-medium">Developer</span>
         </div>
         <span className="text-black pt-3 text-center text-xl">
-          I develop mobile applications and web services using <b>React Native</b> and <b>Next.JS</b> with a focus on creating user-centered solutions. My passion for technology drives me to continually learn and strive for improvement.
+          I develop mobile applications and web services using <b>React Native</b> and <b>Swift</b> with a focus on creating user-centered solutions. My passion for technology drives me to continually learn and strive for improvement.
         </span>
         <SocialMediaComponent />
       </div>
       <TechStackSlide items={TechStack} />
-      <div className="px-5">
+      <div className='max-md:px-12 max-lg:px-40 lg:px-40'>
         <PortfolioComponent />
       </div>
-
     </div >
   );
 }
@@ -48,7 +47,7 @@ function TechStackSlide({ items }: { items: TechStackModel[] }) {
   }, []);
 
   return (
-    <div ref={sliderRef} className="flex flex-row py-12 overflow-x-auto techStackContainer">
+    <div ref={sliderRef} className="flex flex-row overflow-x-auto techStackContainer py-5">
       {items.map((item: TechStackModel) => (
         <img
           key={item.id}
@@ -66,7 +65,7 @@ function TechStackSlide({ items }: { items: TechStackModel[] }) {
 class SocialMediaComponent extends Component {
   render(): ReactNode {
     return <>
-      <div className="flex py-6">
+      <div className="flex max-md:py-6 max-lg:py-6 pt-5">
         {SocialMediaData.map((item: SocialMediaModel) => {
           return <CircleButton path={item.path} link={item.link} key={item.id} />
         })}
