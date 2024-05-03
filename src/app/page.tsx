@@ -8,7 +8,7 @@ import { ProjectModel, SocialMediaModel, TechStack as TechStackModel, } from "./
 export default function Home() {
   return (
     <div className="flex flex-col bg-white">
-      <div className="flex flex-col items-center justify-center max-md:px-12 max-lg:px-40 lg:px-40 pt-20 pb-12">
+      <div className="flex flex-col items-center justify-center max-md:px-12 max-lg:px-40 lg:px-40 pt-14">
         <img className="block xl:w-64 xl:h-64" src="/images/profile.png" />
         <span className="text-black text-4xl pt-5 text-center font-bold">Hello! I'm Engin</span>
         <div className="flex-row pt-3 items-center justify-center">
@@ -47,7 +47,7 @@ function TechStackSlide({ items }: { items: TechStackModel[] }) {
   }, []);
 
   return (
-    <div ref={sliderRef} className="flex flex-row overflow-x-auto techStackContainer py-5">
+    <div ref={sliderRef} className="flex flex-row overflow-x-auto techStackContainer max-md:py-12  py-32">
       {items.map((item: TechStackModel) => (
         <img
           key={item.id}
