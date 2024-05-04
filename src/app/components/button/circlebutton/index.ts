@@ -1,1 +1,1 @@
-export { default as CircleButton } from './layout';
+export { CircleButton as CircleButton } from './_layout';

@@ -1,1 +1,1 @@
-export { default as SectionTitle } from './layout';
+export { default as SectionTitle } from './_layout';
