@@ -32,37 +32,37 @@ export const socialMedia: SocialMediaModel[] = [
   {
     id: 0,
     path: "./ic/ic_instagram.png",
-    link: "/instagram",
+    link: "https://instagram.com/enginn.blt",
   },
   {
     id: 1,
     path: "./ic/ic_x.png",
-    link: "/twitter",
+    link: "https://twitter.com/enginnblt",
   },
   {
     id: 2,
     path: "./ic/ic_youtube.png",
-    link: "/youtube",
+    link: "https://www.youtube.com/@enginbolat",
   },
   {
     id: 3,
     path: "./ic/ic_github.png",
-    link: "/github",
+    link: "https://github.com/enginbolat",
   },
   {
     id: 4,
     path: "./ic/ic_linkedin.png",
-    link: "/linkedin",
+    link: " https://www.linkedin.com/in/enginbolat/",
   },
   {
     id: 5,
     path: "./ic/ic_spotify.png",
-    link: "/spotify"
+    link: "https://open.spotify.com/user/ztio5fucs86aweqzu5exufjab"
   },
   {
     id: 6,
     path: "./ic/ic_medium.png",
-    link: "/medium"
+    link: "https://medium.com/@engi.bolat"
   }
 ];
 
