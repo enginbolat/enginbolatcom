@@ -21,13 +21,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className=" bg-white">
+      <body>
         <Transition>
-          <nav>
-            <Navbar />
-          </nav>
-          {children}
+          <Navbar />
         </Transition>
+        {children}
       </body>
     </html>
   );
