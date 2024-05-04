@@ -8,7 +8,7 @@ import { ProjectModel, SocialMediaModel, TechStack as TechStackModel, } from "./
 export default function Home() {
   return (
     <div className="flex flex-col bg-white">
-      <div className="flex flex-col items-center justify-center max-md:px-12 max-lg:px-40 lg:px-40 pt-14">
+      <div id="aboutMe" className="flex flex-col items-center justify-center max-md:px-12 max-lg:px-40 lg:px-40 pt-14">
         <img className="block xl:w-64 xl:h-64" src="/images/profile.png" />
         <span className="text-black text-4xl pt-5 text-center font-bold">Hello! I'm Engin</span>
         <div className="flex-row pt-3 items-center justify-center">
@@ -21,7 +21,7 @@ export default function Home() {
         <SocialMediaComponent />
       </div>
       <TechStackSlide items={TechStack} />
-      <div className='max-md:px-12 max-lg:px-40 lg:px-40'>
+      <div className='max-md:px-10 md:px-10 max-lg:px-40 lg:px-40'>
         <PortfolioComponent />
       </div>
     </div >
@@ -47,7 +47,10 @@ function TechStackSlide({ items }: { items: TechStackModel[] }) {
   }, []);
 
   return (
-    <div ref={sliderRef} className="flex flex-row overflow-x-auto techStackContainer max-md:py-12  py-32">
+    <div ref={sliderRef}
+      className="flex flex-row overflow-x-auto techStackContainer max-md:py-12 py-32"
+      style={{ scrollbarWidth: 'none', position: 'relative', overflowX: 'hidden' }}
+    >
       {items.map((item: TechStackModel) => (
         <img
           key={item.id}
@@ -77,10 +80,10 @@ class SocialMediaComponent extends Component {
 class PortfolioComponent extends Component {
   render(): ReactNode {
     return <>
-      <div className="my-5">
-        <SectionTitle title="Portfolio"/>
+      <div className="my-5" >
+        <SectionTitle title="Portfolio" />
       </div>
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-2">
+      <div id="portfolio" className="grid grid-cols-1 lg:grid-cols-2 gap-4">
         {ProjectData.map((item: ProjectModel) => {
           return <PortfolioCard link={item.link} path={item.image} title={item.name} key={item.id} />
         })}
