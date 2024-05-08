@@ -114,7 +114,7 @@ class JobTimeLineComponent extends Component {
               >
                 <div className="relative items-center">
                   <div className="absolute -left-5 ml-0.5 top-1 bg-gray-500 border border-white h-4 w-4 rounded-full pulsate" />
-                  <div className="ml-2 h-22">
+                  <div className="ml-2">
                     <div>
                       <span className="font-bold text-xl">{item.companyName}</span>
                     </div>
@@ -152,7 +152,7 @@ class EducationTimeLineComponent extends Component {
               >
                 <div className="relative items-center">
                   <div className="absolute -left-5 ml-0.5 top-1 bg-gray-500 border border-white h-4 w-4 rounded-full pulsate" />
-                  <div className="ml-2 h-22">
+                  <div className="ml-2">
                     <div>
                       <span className="font-bold text-xl">{item.title} </span>
                     </div>
