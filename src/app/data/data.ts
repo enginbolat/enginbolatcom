@@ -153,3 +153,46 @@ export const techStack: TechStack[] = [
     imagePath: "./ic/ic_css.png"
   },
 ]
+
+export const experiences = [
+  {
+    id: 0,
+    companyName: "MetaGrade Corp. (Current)",
+    date: 'September 2023',
+    job: 'Mobile Developer',
+    location: 'NewYork, USA (Remote)',
+    description: "I'm developing a mobile application integrating augmented reality using React Native and Native components, for a market platform."
+  },
+  {
+    id: 1,
+    companyName: "PhD Teknoloji. (Current)",
+    date: 'January 2023',
+    job: 'Mobile Developer',
+    location: 'Antalya,Turkey',
+    description: "I created a mobile application using Flutter, while developing its API with .NET Core WebAPI, ensuring seamless interaction between the frontend and backend for a comprehensive user experience."
+  },
+]
+
+export const education = [
+  {
+    id: 0,
+    title: "Anadolu University (Current)",
+    date: '2023-Still',
+    location: 'Eskisehir,Turkey (Remote)',
+    description: "After graduating from Akdeniz University, I continued my undergraduate education in the Department of Management Systems to complete my bachelor's degree."
+  },
+  {
+    id: 1,
+    title: "Akdeniz University",
+    date: '2021-2023',
+    location: 'Antalya, Turkey',
+    description: "I finished my associate degree in Computer Programming. GPA: 3.2"
+  },
+  {
+    id: 2,
+    title: "Halkalı Vocational Technical Anatolian High School",
+    date: '2017-2021',
+    location: 'Istanbul, Turkey',
+    description: "I graduated from database programming"
+  },
+]
