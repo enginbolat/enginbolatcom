@@ -25,10 +25,8 @@ export default function Home() {
       <TechStackSlide items={TechStack} />
       <div className='max-md:px-10 md:px-10 max-lg:px-40 lg:px-40'>
         <PortfolioComponent />
-        <div className="grid grid-cols-1 xl:grid-cols-2 my-5">
-          <JobTimeLineComponent />
-          <EducationTimeLineComponent />
-        </div>
+        <JobTimeLineComponent />
+        <EducationTimeLineComponent />
       </div>
     </div >
 
@@ -113,10 +111,10 @@ class JobTimeLineComponent extends Component {
                 key={index}
               >
                 <div className="relative items-center">
-                  <div className="absolute -left-5 ml-0.5 top-1 bg-gray-500 border border-white h-4 w-4 rounded-full pulsate" />
+                  <div className="absolute -left-5 ml-0.5 top-1.5 bg-gray-500 border border-white h-4 w-4 rounded-full pulsate" />
                   <div className="ml-2">
                     <div>
-                      <span className="font-bold text-xl">{item.companyName}</span>
+                      <span className="font-bold text-xl text-black">{item.companyName}</span>
                     </div>
                     <div className="my-2">
                       <span className="font-semibold text-gray-500">{item.location}</span>
@@ -124,7 +122,7 @@ class JobTimeLineComponent extends Component {
                       <span className="text-gray-500 font-semibold">{item.date}</span>
                     </div>
                     <div>
-                      <span>{item.description}</span>
+                      <span className="text-black">{item.description}</span>
                     </div>
                   </div>
                 </div>
@@ -141,7 +139,7 @@ class EducationTimeLineComponent extends Component {
   render(): React.ReactNode {
     return (
       <div id="educationtimeline">
-        <SectionTitle title='Education History' />
+        <SectionTitle title='Education' />
         <div id="timeline" className="border-l-4 border-grey-200 ml-3 mt-1 py-6 spac-y-14">
           {Education.map((item, index) => {
             return (
@@ -151,10 +149,10 @@ class EducationTimeLineComponent extends Component {
                 key={index}
               >
                 <div className="relative items-center">
-                  <div className="absolute -left-5 ml-0.5 top-1 bg-gray-500 border border-white h-4 w-4 rounded-full pulsate" />
+                  <div className="absolute -left-5 ml-0.5 top-1.5 bg-gray-500 border border-white h-4 w-4 rounded-full pulsate" />
                   <div className="ml-2">
                     <div>
-                      <span className="font-bold text-xl">{item.title} </span>
+                      <span className="font-bold text-xl text-black">{item.title} </span>
                     </div>
                     <div className="my-2">
                       <span className="font-semibold text-gray-500">{item.location}</span>
@@ -162,7 +160,7 @@ class EducationTimeLineComponent extends Component {
                       <span className="text-gray-500 font-semibold">{item.date}</span>
                     </div>
                     <div>
-                      <span>{item.description}</span>
+                      <span className="text-black">{item.description}</span>
                     </div>
                   </div>
                 </div>

@@ -29,17 +29,17 @@ export default function Navbar() {
                         }}
                     />
                     <NavigationButton
-                        title="Education"
-                        onPress={() => {
-                            console.log("Portfolio Clicked");
-                            handleScrollTo("educationtimeline")
-                        }}
-                    />
-                    <NavigationButton
                         title="Experience"
                         onPress={() => {
                             console.log("Portfolio Clicked");
                             handleScrollTo("experiencetimeline")
+                        }}
+                    />
+                    <NavigationButton
+                        title="Education"
+                        onPress={() => {
+                            console.log("Portfolio Clicked");
+                            handleScrollTo("educationtimeline")
                         }}
                     />
                 </div>

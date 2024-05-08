@@ -21,9 +21,9 @@ export const projects: ProjectModel[] = [
   },
   {
     "id": 3,
-    "name": "Meal App",
-    "link": "https://github.com/EnginBolat/meal-app-bloc",
-    "image": "/images/meal-app.jpg",
+    "name": "Todo App",
+    "link": "https://github.com/EnginBolat/RNTodoApp/tree/master/app",
+    "image": "/images/todo-app.jpg",
   },
 ]
 
@@ -165,7 +165,7 @@ export const experiences = [
   },
   {
     id: 1,
-    companyName: "PhD Teknoloji. (Current)",
+    companyName: "PhD Teknoloji (Current)",
     date: 'January 2023',
     job: 'Mobile Developer',
     location: 'Antalya,Turkey',
@@ -178,7 +178,7 @@ export const education = [
     id: 0,
     title: "Anadolu University (Current)",
     date: '2023-Still',
-    location: 'Eskisehir,Turkey (Remote)',
+    location: 'Eskisehir, Turkey (Remote)',
     description: "After graduating from Akdeniz University, I continued my undergraduate education in the Department of Management Systems to complete my bachelor's degree."
   },
   {
