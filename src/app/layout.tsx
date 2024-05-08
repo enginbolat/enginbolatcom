@@ -20,12 +20,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body>
-        <Transition>
-          <Navbar />
-        </Transition>
+    <html lang="en" suppressHydrationWarning className="bg-white">
+      <body className="bg-white">
         {children}
+        <Navbar />
       </body>
     </html>
   );
