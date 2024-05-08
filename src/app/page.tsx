@@ -1,14 +1,16 @@
 "use client"
 
+import React from "react";
 import { Component, ReactNode, useEffect, useRef } from "react";
+
 import { CircleButton, PortfolioCard, SectionTitle } from "./components";
-import { ProjectData, SocialMediaData, TechStack } from "./data";
+import { ProjectData, SocialMediaData, TechStack, Experiences, Education } from "./data";
 import { ProjectModel, SocialMediaModel, TechStack as TechStackModel, } from "./model";
 
 export default function Home() {
   return (
     <div className="flex flex-col bg-white">
-      <div id="aboutMe" className="flex flex-col items-center justify-center max-md:px-12 max-lg:px-40 lg:px-40 pt-14">
+      <div id="aboutMe" className="flex flex-col items-center justify-center max-md:px-12 max-lg:px-40 lg:px-40 pt-24">
         <img className="block xl:w-64 xl:h-64" src="/images/profile.png" />
         <span className="text-black text-4xl pt-5 text-center font-bold">Hello! I'm Engin</span>
         <div className="flex-row pt-3 items-center justify-center">
@@ -23,8 +25,13 @@ export default function Home() {
       <TechStackSlide items={TechStack} />
       <div className='max-md:px-10 md:px-10 max-lg:px-40 lg:px-40'>
         <PortfolioComponent />
+        <div className="grid grid-cols-1 xl:grid-cols-2 my-5">
+          <JobTimeLineComponent />
+          <EducationTimeLineComponent />
+        </div>
       </div>
     </div >
+
   );
 }
 
@@ -83,11 +90,87 @@ class PortfolioComponent extends Component {
       <div className="my-5" >
         <SectionTitle title="Portfolio" />
       </div>
-      <div id="portfolio" className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+      <div id="portfolio" className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {ProjectData.map((item: ProjectModel) => {
           return <PortfolioCard link={item.link} path={item.image} title={item.name} key={item.id} />
         })}
       </div>
     </>
+  }
+}
+
+class JobTimeLineComponent extends Component {
+  render(): React.ReactNode {
+    return (
+      <div id="experiencetimeline">
+        <SectionTitle title='Experience' />
+        <div id="timeline" className="border-l-4 border-grey-200 ml-3 mt-1 py-6 spac-y-14">
+          {Experiences.map((item, index) => {
+            return (
+              <div
+                id="inner-container"
+                className="ml-2 py-5"
+                key={index}
+              >
+                <div className="relative items-center">
+                  <div className="absolute -left-5 ml-0.5 top-1 bg-gray-500 border border-white h-4 w-4 rounded-full pulsate" />
+                  <div className="ml-2 h-22">
+                    <div>
+                      <span className="font-bold text-xl">{item.companyName}</span>
+                    </div>
+                    <div className="my-2">
+                      <span className="font-semibold text-gray-500">{item.location}</span>
+                      <span className="px-2">-</span>
+                      <span className="text-gray-500 font-semibold">{item.date}</span>
+                    </div>
+                    <div>
+                      <span>{item.description}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    );
+  }
+}
+
+class EducationTimeLineComponent extends Component {
+  render(): React.ReactNode {
+    return (
+      <div id="educationtimeline">
+        <SectionTitle title='Education History' />
+        <div id="timeline" className="border-l-4 border-grey-200 ml-3 mt-1 py-6 spac-y-14">
+          {Education.map((item, index) => {
+            return (
+              <div
+                id="inner-container"
+                className="ml-2 py-5"
+                key={index}
+              >
+                <div className="relative items-center">
+                  <div className="absolute -left-5 ml-0.5 top-1 bg-gray-500 border border-white h-4 w-4 rounded-full pulsate" />
+                  <div className="ml-2 h-22">
+                    <div>
+                      <span className="font-bold text-xl">{item.title} </span>
+                    </div>
+                    <div className="my-2">
+                      <span className="font-semibold text-gray-500">{item.location}</span>
+                      <span className="px-2">-</span>
+                      <span className="text-gray-500 font-semibold">{item.date}</span>
+                    </div>
+                    <div>
+                      <span>{item.description}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    );
   }
 }
