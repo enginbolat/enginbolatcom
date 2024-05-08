@@ -1,34 +1,47 @@
 "use client"
-
-import Link from "next/link";
 import React from "react";
 
 export default function Navbar() {
-
     function handleScrollTo(elementName: string) {
-        const portfolioSection = document.getElementById(elementName);
-        if (portfolioSection) {
-            portfolioSection.scrollIntoView({
-                behavior: "smooth",
-                block: "start"
+        const section = document.getElementById(elementName);
+        if (section) {
+            section.scrollIntoView({
+                behavior: "smooth", block: "end", inline: "nearest"
             });
         }
     }
     return (
         <div>
-            {/* Display for desktop */}
-            <div className="black max-md:hidden p-5 justify-between flex fixed w-full bg-white">
-                <Link href="/">
-                    <span className="font-semibold text-xl text-black">ENGIN BOLAT</span>
-                </Link>
-                <div>
-                    <button onClick={() => { handleScrollTo("aboutMe") }}>
-                        <span className="text-black text-lg">About Me</span>
-                    </button>
-                    <button onClick={() => { handleScrollTo("portfolio") }}>
-                        <span className="text-black text-lg px-4">Portfolio</span>
-                    </button>
-                    <span className="text-black text-lg hidden">Contact Me</span>
+            <div className="fixed top-3 left-1/2 transform -translate-x-1/2 flex flex-col items-center max-md:hidden max-xl:hidden justify-center border border-slate-100 rounded-full shadow">
+                <div className="px-12 rounded-full bg-gray-50 p-5 justify-center items-center">
+                    <NavigationButton
+                        title="About Me"
+                        onPress={() => {
+                            console.log("About Me Clicked");
+                            handleScrollTo("aboutMe")
+                        }}
+                    />
+                    <NavigationButton
+                        title="Portfolio"
+                        onPress={() => {
+                            console.log("Portfolio Clicked");
+                            handleScrollTo("portfolio")
+                        }}
+                    />
+                    <NavigationButton
+                        title="Education"
+                        onPress={() => {
+                            console.log("Portfolio Clicked");
+                            handleScrollTo("educationtimeline")
+                        }}
+                    />
+                    <NavigationButton
+                        title="Experience"
+                        onPress={() => {
+                            console.log("Portfolio Clicked");
+                            handleScrollTo("experiencetimeline")
+                        }}
+                    />
                 </div>
             </div>
 
@@ -39,4 +52,10 @@ export default function Navbar() {
             </div>
         </div>
     );
+}
+
+function NavigationButton({ title, onPress }: { title: string, onPress: () => void }) {
+    return <button onClick={onPress}>
+        <span className="text-slate-600 text-lg pl-4 font-semibold hover:text-slate-950">{title}</span>
+    </button>
 }
