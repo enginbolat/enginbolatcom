@@ -3,7 +3,7 @@
 import React from "react";
 import { Component, ReactNode, useEffect, useRef } from "react";
 
-import { CircleButton, PortfolioCard, SectionTitle } from "./components";
+import { CircleButton, Navbar, PortfolioCard, SectionTitle } from "./components";
 import { ProjectData, SocialMediaData, TechStack, Experiences, Education } from "./data";
 import { ProjectModel, SocialMediaModel, TechStack as TechStackModel, } from "./model";
 
@@ -28,8 +28,8 @@ export default function Home() {
         <JobTimeLineComponent />
         <EducationTimeLineComponent />
       </div>
+      <Navbar />
     </div >
-
   );
 }
 
@@ -86,10 +86,10 @@ class PortfolioComponent extends Component {
   render(): ReactNode {
     return <>
       <div className="my-5" >
-        <SectionTitle title="Portfolio" />
+        <SectionTitle title="Portfolio" navigationUrl="/portfolio" />
       </div>
       <div id="portfolio" className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        {ProjectData.map((item: ProjectModel) => {
+        {ProjectData.slice(0, 4).map((item: ProjectModel) => {
           return <PortfolioCard link={item.link} path={item.image} title={item.name} key={item.id} />
         })}
       </div>
@@ -114,7 +114,7 @@ class JobTimeLineComponent extends Component {
                   <div className="absolute -left-5 ml-0.5 top-1.5 bg-gray-500 border border-white h-4 w-4 rounded-full pulsate" />
                   <div className="ml-2">
                     <div>
-                      <span className="font-bold text-xl text-black">{item.companyName}</span>
+                      <a href={item.link} target='_blank'> <span className="font-bold text-xl text-black">{item.companyName}</span></a>
                     </div>
                     <div className="my-2">
                       <span className="font-semibold text-gray-500">{item.location}</span>
