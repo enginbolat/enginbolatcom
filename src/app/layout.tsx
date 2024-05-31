@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 import "./techstack.css";
-import { Transition, Navbar } from "./components";
+import { Transition } from "./components";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -20,11 +20,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning className="bg-white">
-      <body className="bg-white">
+    <html lang="en" suppressHydrationWarning>
+      <body >
         <Transition>
-          {children}
-          <Navbar />
+            {children}
         </Transition>
       </body>
     </html>
