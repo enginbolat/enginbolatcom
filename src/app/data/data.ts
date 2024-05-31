@@ -1,4 +1,4 @@
-import { ProjectModel, SocialMediaModel, TechStack } from "../model";
+import { Experience, ProjectModel, SocialMediaModel, TechStack } from "../model";
 
 export const projects: ProjectModel[] = [
   {
@@ -154,21 +154,32 @@ export const techStack: TechStack[] = [
   },
 ]
 
-export const experiences = [
+export const experiences: Experience[] = [
   {
     id: 0,
-    companyName: "MetaGrade Corp. (Current)",
-    date: 'September 2023',
+    companyName: "Param Tech",
+    link: 'https://param.com.tr',
+    date: 'June 2024 (Current)',
+    job: 'React Native Developer',
+    location: 'Istanbul, Turkey (Hybrid)',
+    description: ""
+  },
+  {
+    id: 1,
+    link: 'http://metagrade.com',
+    companyName: "MetaGrade Corp.",
+    date: 'September 2023  - June 2024',
     job: 'Mobile Developer',
     location: 'NewYork, USA (Remote)',
     description: "I'm developing a mobile application integrating augmented reality using React Native and Native components, for a market platform."
   },
   {
-    id: 1,
-    companyName: "PhD Teknoloji (Current)",
-    date: 'January 2023',
+    id: 2,
+    companyName: "PhD Teknoloji",
+    link: 'https://www.phd.com.tr',
+    date: 'January 2023 - June 2024',
     job: 'Mobile Developer',
-    location: 'Antalya,Turkey',
+    location: 'Antalya, Turkey',
     description: "I created a mobile application using Flutter, while developing its API with .NET Core WebAPI, ensuring seamless interaction between the frontend and backend for a comprehensive user experience."
   },
 ]
