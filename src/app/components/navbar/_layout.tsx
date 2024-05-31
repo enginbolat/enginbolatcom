@@ -3,10 +3,13 @@ import React from "react";
 
 export default function Navbar() {
     function handleScrollTo(elementName: string) {
+        const userAgent = window.navigator.userAgent;
         const section = document.getElementById(elementName);
         if (section) {
             section.scrollIntoView({
-                behavior: "smooth", block: "end", inline: "nearest"
+                behavior: userAgent.includes('Chrome') ? 'instant' : "smooth",
+                block: "end",
+                inline: "nearest"
             });
         }
     }
@@ -55,7 +58,7 @@ export default function Navbar() {
 }
 
 function NavigationButton({ title, onPress }: { title: string, onPress: () => void }) {
-    return <button onClick={onPress}>
-        <span className="text-slate-600 text-lg pl-4 font-semibold hover:text-slate-950">{title}</span>
+    return <button onClick={onPress} className="px-5">
+        <span className="text-slate-600 text-base pl-4 font-semibold hover:text-slate-950">{title}</span>
     </button>
 }
