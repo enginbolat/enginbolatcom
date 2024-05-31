@@ -157,9 +157,9 @@ export const techStack: TechStack[] = [
 export const experiences: Experience[] = [
   {
     id: 0,
-    companyName: "Param Tech",
+    companyName: "Param Tech (Current)",
     link: 'https://param.com.tr',
-    date: 'June 2024 (Current)',
+    date: 'June 2024',
     job: 'React Native Developer',
     location: 'Istanbul, Turkey (Hybrid)',
     description: ""

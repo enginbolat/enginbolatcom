@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 import "./techstack.css";
-import { Transition } from "./components";
+import { Footer, Transition } from "./components";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -23,8 +23,9 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body >
         <Transition>
-            {children}
+          {children}
         </Transition>
+        <Footer />
       </body>
     </html>
   );
