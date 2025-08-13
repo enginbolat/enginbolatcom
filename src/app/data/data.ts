@@ -42,7 +42,7 @@ export const socialMedia: SocialMediaModel[] = [
   {
     id: 1,
     icon: "x",
-    link: "https://twitter.com/enginnblt",
+    link: "https://x.com/enginnblt",
   },
   {
     id: 2,
