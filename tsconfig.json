@@ -23,7 +23,8 @@
       "@/components": ["./app/components/index.ts"],
       "@/data": ["./app/data/index.ts"],
       "@/model": ["./app/model/index.ts"],
-      "@/portfolio": ["./app/portfolio/index.ts"]
+      "@/portfolio": ["./app/portfolio/index.ts"],
+      "@/feature": ["./app/feature/index.ts"]
     }
   },
   "include": [

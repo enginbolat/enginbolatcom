@@ -1,64 +1,75 @@
-"use client"
-import React from "react";
+"use client";
+import React, { memo, useCallback, useMemo } from "react";
+import { useTheme } from "next-themes";
+import { Icon } from "../icon";
+
+type ButtonType = {
+  title: string;
+  onPress: () => void;
+};
 
 export default function Navbar() {
-    function handleScrollTo(elementName: string) {
-        const userAgent = window.navigator.userAgent;
-        const section = document.getElementById(elementName);
-        if (section) {
-            section.scrollIntoView({
-                behavior: userAgent.includes('Chrome') ? 'instant' : "smooth",
-                block: "end",
-                inline: "nearest"
-            });
-        }
+  const { theme, setTheme, systemTheme } = useTheme();
+  const effective = theme === "system" ? systemTheme : theme;
+
+  const handleScrollTo = useCallback((elementName: string) => {
+    const userAgent = window.navigator.userAgent;
+    const section = document.getElementById(elementName);
+    if (section) {
+      section.scrollIntoView({
+        behavior: userAgent.includes("Chrome") ? "instant" : "smooth",
+        block: "end",
+        inline: "nearest",
+      });
     }
-    return (
-        <div>
-            <div className="fixed top-3 left-1/2 transform -translate-x-1/2 flex flex-col items-center max-md:hidden max-xl:hidden justify-center border border-slate-100 rounded-full shadow">
-                <div className="px-12 rounded-full bg-gray-50 p-5 justify-center items-center">
-                    <NavigationButton
-                        title="About Me"
-                        onPress={() => {
-                            console.log("About Me Clicked");
-                            handleScrollTo("aboutMe")
-                        }}
-                    />
-                    <NavigationButton
-                        title="Portfolio"
-                        onPress={() => {
-                            console.log("Portfolio Clicked");
-                            handleScrollTo("portfolio")
-                        }}
-                    />
-                    <NavigationButton
-                        title="Experience"
-                        onPress={() => {
-                            console.log("Portfolio Clicked");
-                            handleScrollTo("experiencetimeline")
-                        }}
-                    />
-                    <NavigationButton
-                        title="Education"
-                        onPress={() => {
-                            console.log("Portfolio Clicked");
-                            handleScrollTo("educationtimeline")
-                        }}
-                    />
-                </div>
-            </div>
+  }, []);
 
+  const navButtons: ButtonType[] = useMemo(
+    () => [
+      { title: "About Me", onPress: () => handleScrollTo("aboutMe") },
+      { title: "Portfolio", onPress: () => handleScrollTo("portfolio") },
+      {
+        title: "Experience",
+        onPress: () => handleScrollTo("experiencetimeline"),
+      },
+      {
+        title: "Education",
+        onPress: () => handleScrollTo("educationtimeline"),
+      },
+    ],
+    []
+  );
 
-            {/* Display for mobile */}
-            <div className="hidden max-md:hidden bg-green-500">
-                <span className="text-black">Navbar for mobile</span>
-            </div>
-        </div>
-    );
+  const themeButton: ButtonType = {
+    title: effective === "dark" ? "☀️" : "🌙",
+    onPress: () => setTheme(effective === "dark" ? "light" : "dark"),
+  };
+
+  return (
+    <div className="fixed top-5 left-1/2 transform -translate-x-1/2 flex items-center gap-6 border border-slate-100 rounded-full shadow bg-gray-50 px-20 py-3 max-md:hidden max-xl:hidden">
+      {navButtons.map((button, index) => (
+        <NavigationButton
+          key={`${index}-${button.title}`}
+          title={button.title}
+          onPress={button.onPress}
+        />
+      ))}
+      <button onClick={themeButton.onPress}>
+        <Icon name={effective === "dark" ? "sunny" : "dark"} color="black"/>
+      </button>
+    </div>
+  );
 }
 
-function NavigationButton({ title, onPress }: { title: string, onPress: () => void }) {
-    return <button onClick={onPress} className="px-5">
-        <span className="text-slate-600 text-base pl-4 font-semibold hover:text-slate-950">{title}</span>
-    </button>
-}
+type NavigationButtonProps = {
+  title: string;
+  onPress: () => void;
+};
+
+const NavigationButton = memo(({ title, onPress }: NavigationButtonProps) => (
+  <button onClick={onPress}>
+    <span className="text-slate-600 text-base font-semibold hover:text-slate-950 dark:hover:text-white transition">
+      {title}
+    </span>
+  </button>
+));

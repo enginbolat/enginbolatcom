@@ -10,7 +10,7 @@ const PortfolioCard = ({ path, title, link }: Readonly<Props>) => {
       href={link}
       className="hover:cursor-pointer transation duration-300 transform hover:scale-105 hover:zoom-in hover:ease-in-out shadow rounded-xl"
     >
-      <div className="relative bg-transparent group rounded-xl border border-gray-200 cursor-pointer shadow">
+      <div className="relative bg-transparent group rounded-xl border border-gray-700 cursor-pointer shadow">
         <img
           src={path}
           className=" rounded-xl object-cover cursor-pointer shadow"

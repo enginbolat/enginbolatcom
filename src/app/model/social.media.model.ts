@@ -1,5 +1,7 @@
+import { IconKeys } from "app/assets/icons/icons";
+
 export interface SocialMedia {
     id: number;
-    path: string;
+    icon: IconKeys;
     link: string;
 }

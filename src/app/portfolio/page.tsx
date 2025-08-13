@@ -1,26 +1,60 @@
+"use client";
+
 import React from "react";
-import { ProjectData } from '../data'
 import Link from "next/link";
+import Image from "next/image";
+import { ProjectData } from "../data";
+import { Headers } from "./components";
+
+type Project = (typeof ProjectData)[number];
+
+const ProjectCard = React.memo(function ProjectCard({
+  item,
+}: {
+  item: Project;
+}) {
+  return (
+    <article className="group rounded-xl border border-zinc-200 dark:border-zinc-800 overflow-hidden bg-white dark:bg-zinc-900 shadow-sm transition hover:shadow-md focus-within:shadow-md">
+      <Link
+        href={item.link}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="block outline-none"
+      >
+        <div className="relative aspect-[16/9] w-full">
+          <Image
+            src={item.image}
+            alt={item.name}
+            fill
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+            className="object-cover transition-transform duration-300 group-hover:scale-[0.98]"
+            priority={false}
+          />
+        </div>
+        <header className="px-4 py-3">
+          <h3 className="text-xl font-semibold text-zinc-900 dark:text-zinc-100">
+            {item.name}
+          </h3>
+        </header>
+      </Link>
+    </article>
+  );
+});
 
 export default function Portfolio() {
+  return (
+    <div className="min-h-screen bg-white text-zinc-900 dark:bg-zinc-950 dark:text-zinc-100">
+      {/* Sticky header */}
+      <Headers />
 
-    return <div className="flex flex-col bg-white">
-        <div className="flex flex-col items-center justify-center max-md:px-12 max-lg:px-40 lg:px-40 pt-12">
-            <div>
-                {ProjectData.map((item, index) => {
-                    return <div className="py-2 flex flex-col" key={item.id}>
-                        <span className="text-black text-2xl font-bold py-2">{item.name}</span>
-                        <Link href={item.link}>
-                            <img src={item.image} alt={item.name} className="hover:cursor-pointer transation duration-300 transform hover:scale-95 hover:zoom-in hover:ease-in-out shadow rounded-xl" />
-                        </Link>
-                    </div>
-                })}
-            </div>
+      {/* Content */}
+      <main className="mx-auto max-w-6xl px-4 py-8">
+        <div className="grid gap-6 sm:grid-cols-5 md:grid-cols-5 lg:grid-cols-2">
+          {ProjectData.map((item) => (
+            <ProjectCard key={item.id} item={item} />
+          ))}
         </div>
-        <div className="p-5 fixed bg-white w-full">
-            <Link href='/'>
-                <span className="text-black font-bold text-xl">ENGIN BOLAT</span>
-            </Link>
-        </div>
+      </main>
     </div>
+  );
 }
